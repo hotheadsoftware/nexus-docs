@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknexus_docs=self.webpackChunknexus_docs||[]).push([[472],{8781:s=>{s.exports=JSON.parse('{"permalink":"/nexus-docs/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

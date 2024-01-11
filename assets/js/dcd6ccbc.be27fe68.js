@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknexus_docs=self.webpackChunknexus_docs||[]).push([[190],{3257:s=>{s.exports=JSON.parse('{"label":"facebook","permalink":"/nexus-docs/blog/tags/facebook","allTagsPath":"/nexus-docs/blog/tags","count":1,"unlisted":false}')}}]);
