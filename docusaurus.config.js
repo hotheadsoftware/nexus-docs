@@ -9,7 +9,7 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Nexus',
-  tagline: 'Laravel Saas Launchpad',
+  tagline: 'Saas App Launchpad',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

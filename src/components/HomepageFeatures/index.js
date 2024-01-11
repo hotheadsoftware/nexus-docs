@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from "@docusaurus/Link";
 
 const FeatureList = [
   {
@@ -8,7 +9,7 @@ const FeatureList = [
     Svg: require('@site/static/img/laravel.svg').default,
     description: (
       <>
-          Based on the latest version of Laravel, Nexus gives you the benefit
+          Based on the latest version of <Link to={"https://laravel.com"}>Laravel</Link>, Nexus gives you the benefit
           of using a massive open-source project as the foundation. A broad and
           deep ecosystem is at your fingertips.
       </>
@@ -19,7 +20,7 @@ const FeatureList = [
     Svg: require('@site/static/img/filament.svg').default,
     description: (
       <>
-          We provide 3 panels out of the box to cover the most
+          We provide 3 <Link to={"https://filamentphp.com"}>Filament</Link> panels out of the box to cover the most
           common Saas use-case: management, subscription, and operation.
           Our light-touch philosophy means Nexus is easy to extend.
       </>
@@ -30,7 +31,7 @@ const FeatureList = [
     Svg: require('@site/static/img/tenancyforlaravel.svg').default,
     description: (
       <>
-           Take multi-tenancy to the next level by automatically creating
+           Take <Link to={"https://tenancyforlaravel.com"}>multi-tenancy</Link> to the next level by automatically creating
            and managing new tenant databases for each. This provides total
            data isolation and security for your clients and makes moving
            them to dedicated hardware a much easier lift.
