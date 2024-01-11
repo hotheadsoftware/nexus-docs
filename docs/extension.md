@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
-# Adding a New Panel
+# Extending Nexus
 
 ## Discussion
 
