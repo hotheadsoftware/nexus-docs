@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Laravel 10+',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: require('@site/static/img/laravel.svg').default,
     description: (
       <>
           Based on the latest version of Laravel, Nexus gives you the benefit
@@ -16,7 +16,7 @@ const FeatureList = [
   },
   {
     title: 'Filament 3',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: require('@site/static/img/filament.svg').default,
     description: (
       <>
           We provide 3 panels out of the box to cover the most
@@ -27,7 +27,7 @@ const FeatureList = [
   },
   {
     title: 'Tenancy For Laravel',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: require('@site/static/img/tenancyforlaravel.svg').default,
     description: (
       <>
            Take multi-tenancy to the next level by automatically creating

@@ -10,6 +10,7 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
+      /* Customize in src/pages/index.module.css */
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
@@ -32,10 +33,15 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title} Saas Launchpad`}
+      description="Nexus Saas Launchpad Documentation">
       <HomepageHeader />
       <main>
+        <div style={{ textAlign: 'center', marginTop: '3em' }}>
+            <h3>
+                Nexus integrates the following components. No endorsement is implied on their behalf:
+            </h3>
+        </div>
         <HomepageFeatures />
       </main>
     </Layout>
