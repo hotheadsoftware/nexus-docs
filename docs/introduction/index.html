@@ -5,7 +5,7 @@
 <meta name="generator" content="Docusaurus v3.1.0">
 <title data-rh="true">Introduction | Nexus</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://hotheadsoftware.github.io/nexus-docs/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://hotheadsoftware.github.io/nexus-docs/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://hotheadsoftware.github.io/nexus-docs/docs/introduction"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Introduction | Nexus"><meta data-rh="true" name="description" content="Our Mission"><meta data-rh="true" property="og:description" content="Our Mission"><link data-rh="true" rel="icon" href="/nexus-docs/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://hotheadsoftware.github.io/nexus-docs/docs/introduction"><link data-rh="true" rel="alternate" href="https://hotheadsoftware.github.io/nexus-docs/docs/introduction" hreflang="en"><link data-rh="true" rel="alternate" href="https://hotheadsoftware.github.io/nexus-docs/docs/introduction" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/nexus-docs/blog/rss.xml" title="Nexus RSS Feed">
 <link rel="alternate" type="application/atom+xml" href="/nexus-docs/blog/atom.xml" title="Nexus Atom Feed"><link rel="stylesheet" href="/nexus-docs/assets/css/styles.7b5d97d3.css">
-<script src="/nexus-docs/assets/js/runtime~main.cd1f8016.js" defer="defer"></script>
+<script src="/nexus-docs/assets/js/runtime~main.634ddbf4.js" defer="defer"></script>
 <script src="/nexus-docs/assets/js/main.714a3885.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -55,39 +55,6 @@ connection details to the tenant configuration.</p>
 deliver multi-database, domain-derived multi-tenancy. This package is
 compatible with Filament and ensures that all tenant operations happen
 in a tenant context (connections to database, queues, storage, etc.,
-are scoped).</p>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="getting-started">Getting Started<a href="#getting-started" class="hash-link" aria-label="Direct link to Getting Started" title="Direct link to Getting Started">​</a></h2>
-<h3 class="anchor anchorWithStickyNavbar_LWe7" id="what-youll-need">What you&#x27;ll need<a href="#what-youll-need" class="hash-link" aria-label="Direct link to What you&#x27;ll need" title="Direct link to What you&#x27;ll need">​</a></h3>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="a-laravel-environment">A Laravel Environment<a href="#a-laravel-environment" class="hash-link" aria-label="Direct link to A Laravel Environment" title="Direct link to A Laravel Environment">​</a></h4>
-<p>This typically includes PHP, a database, a cache provider, a queue provider, etc.
-If you&#x27;re already building Laravel projects, you probably have a set of tooling
-that will work for Nexus. We&#x27;re not doing anything special here.</p>
-<p>If you&#x27;re starting from scratch on Windows, we recommend using WSL 2, Docker,
-and Laravel Sail. Our setup.sh can help you quickly stand up this environment.</p>
-<p>If you want to create the application and environment by hand, here are the steps:</p>
-<ol>
-<li>Clone the Nexus repo.</li>
-<li>Run <code>composer install</code>.<!-- -->
-<ul>
-<li>You&#x27;ll need PHP &amp; Composer on your machine OR</li>
-<li>You can use docker to run a composer container, suppressing errors related to php extensions.</li>
-</ul>
-</li>
-<li>Run <code>.vendor/bin/sail up -d</code></li>
-<li>Copy .env.example to .env</li>
-<li>Run <code>.vendor/bin/sail artisan key:generate</code></li>
-<li>Run <code>.vendor/bin/sail artisan migrate --seed</code></li>
-<li>Run <code>npm install</code> or <code>bun install</code> (can do this using vendor/bin/sail if desired).</li>
-<li>Add our Pint pre-commit hook if you want to enforce code styles (see setup.sh).</li>
-<li>Install bash aliases for sail, artisan, and composer (optional).</li>
-</ol>
-<p>For details on the commands and how to run them, see setup.sh.</p>
-<h4 class="anchor anchorWithStickyNavbar_LWe7" id="localhost-routing-dns--hosts-file">Localhost Routing (DNS / Hosts File)<a href="#localhost-routing-dns--hosts-file" class="hash-link" aria-label="Direct link to Localhost Routing (DNS / Hosts File)" title="Direct link to Localhost Routing (DNS / Hosts File)">​</a></h4>
-<p>You&#x27;ll need to be able to route some domains to localhost. On windows, you can
-modify the c:\Windows\System32\drivers\etc\hosts file and add relevant entries.
-We recommend adding pointers for foo.localhost, bar.localhost, and baz.localhost
-to 127.0.0.1.</p>
-<p>Other operating systems will need their own modifications and the methods for
-doing that are easily found by searching the web.</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/hotheadsoftware/nexus-docs/docs/introduction.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--next" href="/nexus-docs/docs/installation"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Installation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#our-mission" class="table-of-contents__link toc-highlight">Our Mission</a></li><li><a href="#setting-expectations" class="table-of-contents__link toc-highlight">Setting Expectations</a><ul><li><a href="#what-we-deliver" class="table-of-contents__link toc-highlight">What We Deliver</a></li><li><a href="#what-we-dont-deliver" class="table-of-contents__link toc-highlight">What We Don&#39;t Deliver</a></li><li><a href="#the-core-tooling" class="table-of-contents__link toc-highlight">The Core Tooling</a></li></ul></li><li><a href="#the-tenancy-problem" class="table-of-contents__link toc-highlight">The Tenancy Problem</a><ul><li><a href="#how-nexus-solves-it" class="table-of-contents__link toc-highlight">How Nexus Solves It</a></li></ul></li><li><a href="#getting-started" class="table-of-contents__link toc-highlight">Getting Started</a><ul><li><a href="#what-youll-need" class="table-of-contents__link toc-highlight">What you&#39;ll need</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 Hot Head Software.</div></div></div></footer></div>
+are scoped).</p></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="theme-doc-footer-edit-meta-row row"><div class="col"><a href="https://github.com/hotheadsoftware/nexus-docs/docs/introduction.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div><div class="col lastUpdated_vwxv"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--next" href="/nexus-docs/docs/installation"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Installation</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#our-mission" class="table-of-contents__link toc-highlight">Our Mission</a></li><li><a href="#setting-expectations" class="table-of-contents__link toc-highlight">Setting Expectations</a><ul><li><a href="#what-we-deliver" class="table-of-contents__link toc-highlight">What We Deliver</a></li><li><a href="#what-we-dont-deliver" class="table-of-contents__link toc-highlight">What We Don&#39;t Deliver</a></li><li><a href="#the-core-tooling" class="table-of-contents__link toc-highlight">The Core Tooling</a></li></ul></li><li><a href="#the-tenancy-problem" class="table-of-contents__link toc-highlight">The Tenancy Problem</a><ul><li><a href="#how-nexus-solves-it" class="table-of-contents__link toc-highlight">How Nexus Solves It</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 Hot Head Software.</div></div></div></footer></div>
 </body>
 </html>
