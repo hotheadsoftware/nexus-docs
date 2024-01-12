@@ -149,7 +149,7 @@ Add a constant for panel name:
 ```
 
 ### Panel Method Calls
-Add or updated the following method calls to the panel() method's $panel return:
+Add or update the following method calls to the panel() method's $panel return:
 ```php
     ->id(self::PANEL)
     ->path(self::PANEL)
