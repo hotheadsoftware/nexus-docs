@@ -158,10 +158,10 @@ Add or updated the following method calls to the panel() method's $panel return:
     ->registration()
     ->authGuard(self::PANEL)
 ```
-
-_Note: You can add some dynamic logic to the registration method. If the closure returns true, registration
+:::info
+You can add some dynamic logic to the registration method. If the closure returns true, registration
 will be enabled. False? The "sign up" link disappears and registration page returns a 404._ 
-
+:::
 ### Panel Middleware
 
 Add the following middleware to any panel in the Tenant context:
@@ -186,7 +186,15 @@ _You can be as granular as you desire with the token permissions listed. Our exa
 is probably too broad for most use-cases._ 
 
 ### Custom Branding
+:::info
+Custom Branding is entirely optional on any given panel. If you're
+charging users for usage of their panel, you may want to offer
+custom branding as a premium feature.
 
+If you want to gate this feature, we recommend using Laravel Pennant
+to define and manage the feature flag. This package is already installed
+in Nexus.
+:::
 Copy the register() function from OperatePanelProvider. Pase that into your BuyerPanelProvider. 
 
 If you need a custom logo view for this new panel, copy resources/views/filament/tenant.blade.php
@@ -199,8 +207,17 @@ Note that it's a solid practice to routine perform artisan migrate:fresh --seed 
 constantly testing your ability to recreate environments from scratch. That's what we recommend
 here. Destroy and recreate your local environment, then log into each panel and confirm your
 changes are good. 
+```php
+artisan migrate:fresh --seed
+```
+:::info
+If for some reason you don't want to recreate everything, you can run
+`artisan tenant:migrate --seed` to add any new migration changes and
+ensure your initial users are seeded. This command will run migrations
+and seeders against all current tenant databases. For additional details,
+see [TenancyForLaravel](https://tenancyforlaravel.com/docs/v3/console-commands).
+:::
 
-    artisan migrate:fresh --seed
 
 NOTE: You don't have to delete/recreate in Production environments! This is purely a convenience
 for your local environment. In production, we would expect that there will be no users initially.
