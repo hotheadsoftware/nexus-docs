@@ -66,45 +66,4 @@ We use the [stancl/tenancy](https://tenancyforlaravel.com) package to
 deliver multi-database, domain-derived multi-tenancy. This package is
 compatible with Filament and ensures that all tenant operations happen
 in a tenant context (connections to database, queues, storage, etc.,
-are scoped). 
-
-
-## Getting Started
-
-### What you'll need
-
-#### A Laravel Environment
-
-This typically includes PHP, a database, a cache provider, a queue provider, etc. 
-If you're already building Laravel projects, you probably have a set of tooling 
-that will work for Nexus. We're not doing anything special here. 
-
-If you're starting from scratch on Windows, we recommend using WSL 2, Docker,
-and Laravel Sail. Our setup.sh can help you quickly stand up this environment.
-
-If you want to create the application and environment by hand, here are the steps: 
-
-1. Clone the Nexus repo. 
-2. Run `composer install`. 
-     - You'll need PHP & Composer on your machine OR
-     - You can use docker to run a composer container, suppressing errors related to php extensions.
-3. Run `.vendor/bin/sail up -d`
-4. Copy .env.example to .env
-5. Run `.vendor/bin/sail artisan key:generate`
-6. Run `.vendor/bin/sail artisan migrate --seed`
-7. Run `npm install` or `bun install` (can do this using vendor/bin/sail if desired).
-8. Add our Pint pre-commit hook if you want to enforce code styles (see setup.sh).
-9. Install bash aliases for sail, artisan, and composer (optional). 
-
-For details on the commands and how to run them, see setup.sh.
-
-#### Localhost Routing (DNS / Hosts File)
-
-You'll need to be able to route some domains to localhost. On windows, you can
-modify the c:\Windows\System32\drivers\etc\hosts file and add relevant entries.
-We recommend adding pointers for foo.localhost, bar.localhost, and baz.localhost 
-to 127.0.0.1.
-
-Other operating systems will need their own modifications and the methods for
-doing that are easily found by searching the web. 
-
+are scoped).

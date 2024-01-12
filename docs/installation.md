@@ -4,107 +4,83 @@ sidebar_position: 2
 
 # Installation
 
-## Our Mission
+Nexus Saas Launchpad is a Laravel application. This means it runs in a PHP
+environment.
 
-To further enable the "build it faster" mindset by pre-integrating key tools
-so that you can stand up fully functional subscription-based applications in 
-minutes, not hours or days. 
+The fastest path to a functional development environment is to use Valet if
+you're on Mac, or Sail if you're on Windows + WSL. 
 
-## Setting Expectations
+## Pre-Requisites
 
-### What We Deliver
+### Web Server
 
-Nexus gives you an integrated environment for Laravel, Filament, and Tenancy, 
-with very few other customizations. We want to give you room to build your dream 
-without getting in the way. 
+On Mac, Valet will act as the webserver and also assist with other important
+functions needed in a local environment. 
 
-### What We Don't Deliver
+On Windows, we recommend using Docker to host the necessary container. Sail
+is built-in to Laravel, and we take advantage of it when developing Nexus.
 
-We've intentionally avoided billing integration. Why? Every project will have
-its own needs and preferences in this area. You might want to use Stripe or
-Paddle or some other completely custom payment solution. 
+If you elect to pursue other hosting options, ensure that PHP 8.1 is installed
+and configured with all the necessary extensions (which can be found in 
+composer.json). 
 
-Maybe you want to use Laravel Spark. I contemplated adding Spark to this
-package so I could get things going much faster, but that would have forced
-anyone who wants to use Nexus to buy a Spark license. That didn't seem fair.
+### Database
 
-We will maintain a Laravel-Spark (Paddle) version of Nexus for those who wish
-to use that, but covering every possible use-case is not feasible or maintainable
-for us. This might change if the community steps in to provide support. 
+The Nexus Team uses PostgreSQL as the backing database for Nexus development.
+This will be the most straightforward path for now, though we are aware that
+the project should make strides towards being database-agnostic. 
 
-### The Core Tooling
+### Cache & Queue Providers
 
-Laravel's "Build It Faster" is achieved by giving you a set of back-end tools
-and plugins - a broad ecosystem - so that you can create any PHP app extremely
-rapidly, with reliable tooling. 
+For local development, we recommend using a Redis container. One is included
+by default with our Nexus configuration. 
 
-Filament's "Build It Faster" is achieved by layering interfaces and connections
-on top of a Laravel project. Combined with some command-line tooling to enable
-rapid extension, Filament can help you create user interfaces in minutes.
+## Provided Bash Script (setup.sh)
 
-## The Tenancy Problem
+```bash
+./setup.sh
+```
 
-As great as the above tooling is, there's a gap. Filament's built-in tenancy
-supports single-database operations. That means you need to add tenant_id to
-all the relevant tables and ensure that global scopes are applied to all
-operations to prevent data leakage. This model is fine for some applications.
+This script will quickly and automatically bootstrap a local development 
+environment in Windows + WSL 2 + Docker. All required containers will be
+created and all dependencies installed. The script will even launch the
+stack, so you can immediately load the app in your browser!
 
-An alternative approach is to create a new database or schema for each new
-tenant. The challenges to this approach are that application complexity
-increases, and data becomes more isolated (you can't join across databases, 
-for instance, since each gets its own connection). 
-
-The benefits of this approach are that tenant data is isolated, you don't
-have to take any additional steps to ensure no leakage between tenants,
-and migrating a noisy neighbor to dedicated hardware is as simple as making
-a snapshot, standing up a new database instance, and adding the new
-connection details to the tenant configuration.
-
-### How Nexus Solves It
-
-We use the [stancl/tenancy](https://tenancyforlaravel.com) package to
-deliver multi-database, domain-derived multi-tenancy. This package is
-compatible with Filament and ensures that all tenant operations happen
-in a tenant context (connections to database, queues, storage, etc.,
-are scoped). 
-
-
-## Getting Started
-
-### What you'll need
-
-#### A Laravel Environment
-
-This typically includes PHP, a database, a cache provider, a queue provider, etc. 
-If you're already building Laravel projects, you probably have a set of tooling 
-that will work for Nexus. We're not doing anything special here. 
-
-If you're starting from scratch on Windows, we recommend using WSL 2, Docker,
-and Laravel Sail. Our setup.sh can help you quickly stand up this environment.
+## Do It By Hand
 
 If you want to create the application and environment by hand, here are the steps: 
 
-1. Clone the Nexus repo. 
-2. Run `composer install`. 
-     - You'll need PHP & Composer on your machine OR
-     - You can use docker to run a composer container, suppressing errors related to php extensions.
-3. Run `.vendor/bin/sail up -d`
-4. Copy .env.example to .env
-5. Run `.vendor/bin/sail artisan key:generate`
-6. Run `.vendor/bin/sail artisan migrate --seed`
-7. Run `npm install` or `bun install` (can do this using vendor/bin/sail if desired).
-8. Add our Pint pre-commit hook if you want to enforce code styles (see setup.sh).
-9. Install bash aliases for sail, artisan, and composer (optional). 
+1. Clone `https://github.com/hotheadsoftware/nexus` 
+2. Ensure you have Composer available to you. 
+3. Run `composer install`.
+4. Run `.vendor/bin/sail up -d`
+5. Copy .env.example to .env
+6. Run `.vendor/bin/sail artisan key:generate`
+7. Run `.vendor/bin/sail artisan migrate --seed`
+8. Run `npm install` or `bun install` (can do this using vendor/bin/sail if desired).
+9. Add our Pint pre-commit hook if you want to enforce code styles (see setup.sh).
+10. Install bash aliases for sail, artisan, and composer (optional). 
 
 For details on the commands and how to run them, see setup.sh.
 
-#### Localhost Routing (DNS / Hosts File)
+## Localhost Routing (DNS / Hosts File)
+
+### Windows
 
 You'll need to be able to route some domains to localhost. On windows, you can
 modify the c:\Windows\System32\drivers\etc\hosts file and add relevant entries.
-We recommend adding pointers for foo.localhost, bar.localhost, and baz.localhost 
-to 127.0.0.1.
+We recommend adding the following pointers: 
 
-Other operating systems will need their own modifications and the methods for
-doing that are easily found by searching the web. 
+```
+foo.localhost  127.0.0.1
+bar.localhost  127.0.0.1
+baz.localhost  127.0.0.1
+```
 
+### Linux
+
+Modify /etc/hosts with the above. 
+
+### MacOS
+
+On Mac OS, use Valet. It will handle all of this (and much more) for you. 
