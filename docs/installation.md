@@ -26,9 +26,9 @@ composer.json).
 
 ### Database
 
-The Nexus Team uses PostgreSQL as the backing database for Nexus development.
-This will be the most straightforward path for now, though we are aware that
-the project should make strides towards being database-agnostic. 
+Our default choice is Postgres, but we use Eloquent everywhere, including
+migrations, seeders, and other files, so you should be able to point Nexus
+at any given DB engine supported by Laravel. 
 
 ### Cache & Queue Providers
 
