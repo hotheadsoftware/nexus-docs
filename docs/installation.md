@@ -10,6 +10,16 @@ environment.
 The fastest path to a functional development environment is to use Valet if
 you're on Mac, or Sail if you're on Windows + WSL. 
 
+## Early Adopters
+
+If you're reading this, know that Nexus is evolving quickly. The current
+iteration is still very manual and sticky in places. I want to get this
+down to where you can install Nexus as a dependency, use it to create
+some things, and safely remove the dependency (or only have in dev),
+without impacting panel performance. 
+
+We are not there quite yet. 
+
 ## Pre-Requisites
 
 ### Web Server
@@ -83,4 +93,8 @@ Modify /etc/hosts with the above.
 
 ### MacOS
 
-On Mac OS, use Valet. It will handle all of this (and much more) for you. 
+On Mac OS, use Valet. It will handle all of this (and much more) for you.
+
+## Next Steps
+
+Now that you've established the environment, let's create your first tenant-context panel!

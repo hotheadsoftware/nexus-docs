@@ -12,6 +12,18 @@ minutes, not hours or days.
 
 ## Setting Expectations
 
+### Where We Are Today
+
+Nexus is a project that requires a user to clone a repo, with lots of wiring
+inside the framework itself. We've intentionally kept the wiring to a minimum, 
+but it's there nonetheless. 
+
+My desired endgame here is that Nexus becomes a Composer project, following a
+common Laravel convention: composer require org/project, followed by an artisan
+command like nexus:install which sets up the bare-bones pieces, including
+creation of the first 2 panels (central context) and some of the tenant/ 
+prefixed stuff. 
+
 ### What We Deliver
 
 Nexus gives you an integrated environment for Laravel, Filament, and Tenancy, 
